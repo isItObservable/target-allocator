@@ -1,7 +1,9 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  app.kubernetes.io/part-of: prometheus-node-exporter
+  name: node-exporter-monitor
+  labels:
+    app.kubernetes.io/part-of: prometheus-node-exporter
 spec:
   selector:
     matchLabels:
@@ -16,7 +18,9 @@ spec:
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  app.kubernetes.io/part-of: prometheus-kube-state-metric
+  name: kube-state-monitor
+  labels:
+    app.kubernetes.io/part-of: prometheus-kube-state-metric
 spec:
   selector:
     matchLabels:

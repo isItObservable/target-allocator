@@ -11,8 +11,6 @@ spec:
   image: otel/opentelemetry-collector-contrib:0.90.0
   targetAllocator:
     enabled: true
-    prometheusCR:
-      enabled: true
   ports:
     - name: prometheus
       port: 9090
